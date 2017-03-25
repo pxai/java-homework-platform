@@ -9,7 +9,7 @@ import io.pello.java.homework.platform.commands.MessageCommand;
 import io.pello.java.homework.platform.converters.MessageCommandToMessage;
 import io.pello.java.homework.platform.converters.MessageToMessageCommand;
 import io.pello.java.homework.platform.domain.Message;
-import io.pello.java.homework.platform.repository.MessageRepository;
+import io.pello.java.homework.platform.repositories.MessageRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

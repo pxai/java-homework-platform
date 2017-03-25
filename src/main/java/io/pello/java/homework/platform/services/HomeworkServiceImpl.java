@@ -9,7 +9,7 @@ import io.pello.java.homework.platform.commands.HomeworkCommand;
 import io.pello.java.homework.platform.converters.HomeworkCommandToHomework;
 import io.pello.java.homework.platform.converters.HomeworkToHomeworkCommand;
 import io.pello.java.homework.platform.domain.Homework;
-import io.pello.java.homework.platform.repository.HomeworkRepository;
+import io.pello.java.homework.platform.repositories.HomeworkRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

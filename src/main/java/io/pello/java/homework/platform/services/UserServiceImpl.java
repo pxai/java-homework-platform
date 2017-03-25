@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import es.anaya.spring.web.s04.dblogin.domain.Role;
-import es.anaya.spring.web.s04.dblogin.domain.User;
-import es.anaya.spring.web.s04.dblogin.repositories.RoleRepository;
-import es.anaya.spring.web.s04.dblogin.repositories.UserRepository;
-import es.anaya.spring.web.s04.dblogin.security.LamePasswordEncoder;
+import io.pello.java.homework.platform.domain.Role;
+import io.pello.java.homework.platform.domain.User;
+import io.pello.java.homework.platform.repositories.RoleRepository;
+import io.pello.java.homework.platform.repositories.UserRepository;
+import io.pello.java.homework.platform.security.LamePasswordEncoder;
 
 @Service
 public class UserServiceImpl implements UserService{

@@ -1,6 +1,6 @@
 package io.pello.java.homework.platform.services;
 
-import es.anaya.spring.web.s04.dblogin.domain.User;
+import io.pello.java.homework.platform.domain.User;
 
 public interface UserService {
 	public User findUserByUsername(String username);
