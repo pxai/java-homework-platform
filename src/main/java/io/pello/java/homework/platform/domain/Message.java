@@ -1,4 +1,4 @@
-package io.pello.homework.javahomeworkplatform;
+package io.pello.java.homework.platform.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

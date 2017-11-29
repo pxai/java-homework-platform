@@ -1,10 +1,13 @@
-package io.pello.homework.javahomeworkplatform;
+package io.pello.java.homework.platform.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import io.pello.java.homework.platform.commands.MessageCommand;
+import io.pello.java.homework.platform.services.MessageService;
 
 @Controller
 public class MessageController {

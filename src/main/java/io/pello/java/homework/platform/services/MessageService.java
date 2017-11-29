@@ -1,7 +1,10 @@
-package io.pello.homework.javahomeworkplatform;
+package io.pello.java.homework.platform.services;
 
 import java.util.List;
 import java.util.Optional;
+
+import io.pello.java.homework.platform.commands.MessageCommand;
+import io.pello.java.homework.platform.domain.Message;
 
 public interface MessageService {
 	public Optional<Message> getById(Long id);

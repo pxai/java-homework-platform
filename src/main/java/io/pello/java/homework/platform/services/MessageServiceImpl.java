@@ -1,10 +1,15 @@
-package io.pello.homework.javahomeworkplatform;
+package io.pello.java.homework.platform.services;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
+import io.pello.java.homework.platform.MessageCommandToMessage;
+import io.pello.java.homework.platform.MessageToMessageCommand;
+import io.pello.java.homework.platform.commands.MessageCommand;
+import io.pello.java.homework.platform.domain.Message;
+import io.pello.java.homework.platform.repository.MessageRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

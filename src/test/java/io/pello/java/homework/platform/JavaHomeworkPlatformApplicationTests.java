@@ -1,4 +1,4 @@
-package io.pello.homework.javahomeworkplatform;
+package io.pello.java.homework.platform;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

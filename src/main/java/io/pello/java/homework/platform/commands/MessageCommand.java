@@ -1,4 +1,4 @@
-package io.pello.homework.javahomeworkplatform;
+package io.pello.java.homework.platform.commands;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
