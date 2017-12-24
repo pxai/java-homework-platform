@@ -14,6 +14,4 @@ public class HomeworkCommand {
     private Long id;
     private String title;
     private String description;
-	private Date since;
-	private Date due;
 }
