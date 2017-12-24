@@ -6,29 +6,31 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.pello.java.homework.platform.commands.HomeworkCommand;
 import io.pello.java.homework.platform.commands.MessageCommand;
+import io.pello.java.homework.platform.services.HomeworkService;
 import io.pello.java.homework.platform.services.MessageService;
 
 @Controller
 public class HomeworkController {
-
-	private MessageService messageService;
-		
-    public HomeworkController(MessageService messageService) {
-		this.messageService = messageService;
+	private HomeworkService homeworkService;
+	
+    public HomeworkController(HomeworkService homeworkService) {
+		this.homeworkService = homeworkService;
 	}
 
-	@RequestMapping("/messages")
+	@RequestMapping("/homeworks")
     public String list (Model model) {    	
-        model.addAttribute("messageCommand", new MessageCommand());
-    	model.addAttribute("messages", messageService.getMessages());
-        return "messages";
+        model.addAttribute("homeworkCommand", new HomeworkCommand());
+    	model.addAttribute("homeworks", homeworkService.getHomeworks());
+        return "homeworks";
     }
 	
-    @PostMapping("/messages")
-    public String saveMessage(Model model, @ModelAttribute MessageCommand messageCommand) {
-    	MessageCommand savedMessageCommand = messageService.saveMessage(messageCommand);
-    	model.addAttribute("message", savedMessageCommand);
-        return "messageSaved";
+    @PostMapping("/homeworks")
+    public String saveHomework(Model model, @ModelAttribute HomeworkCommand homeworkCommand) {
+    	HomeworkCommand savedHomeworkCommand = homeworkService.saveHomework(homeworkCommand);
+    	model.addAttribute("homework", savedHomeworkCommand);
+        return "homeworkSaved";
     }
+	
 }

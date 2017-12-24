@@ -8,9 +8,7 @@ import org.springframework.stereotype.Component;
 import io.pello.java.homework.platform.commands.MessageCommand;
 import io.pello.java.homework.platform.domain.Message;
 
-/**
- * Created by jt on 6/21/17.
- */
+
 @Component
 public class MessageToMessageCommand implements Converter<Message, MessageCommand> {
 

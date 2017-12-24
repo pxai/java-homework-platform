@@ -5,47 +5,47 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import io.pello.java.homework.platform.commands.MessageCommand;
-import io.pello.java.homework.platform.converters.MessageCommandToMessage;
-import io.pello.java.homework.platform.converters.MessageToMessageCommand;
-import io.pello.java.homework.platform.domain.Message;
-import io.pello.java.homework.platform.repository.MessageRepository;
+import io.pello.java.homework.platform.commands.HomeworkCommand;
+import io.pello.java.homework.platform.converters.HomeworkCommandToHomework;
+import io.pello.java.homework.platform.converters.HomeworkToHomeworkCommand;
+import io.pello.java.homework.platform.domain.Homework;
+import io.pello.java.homework.platform.repository.HomeworkRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class HomeworkServiceImpl implements MessageService {
+public class HomeworkServiceImpl implements HomeworkService {
 
-	private MessageRepository messageRepository;
-	private MessageToMessageCommand messageToMessageCommand;
-	private MessageCommandToMessage messageCommandToMessage;
+	private HomeworkRepository homeworkRepository;
+	private HomeworkToHomeworkCommand homeworkToHomeworkCommand;
+	private HomeworkCommandToHomework homeworkCommandToHomework;
 	
 	
 	
-	public HomeworkServiceImpl(MessageRepository messageRepository, 
-			MessageToMessageCommand messageToMessageCommand,
-			MessageCommandToMessage messageCommandToMessage) {
-		this.messageRepository = messageRepository;
-		this.messageToMessageCommand = messageToMessageCommand;
-		this.messageCommandToMessage = messageCommandToMessage;
+	public HomeworkServiceImpl(HomeworkRepository homeworkRepository, 
+			HomeworkToHomeworkCommand homeworkToHomeworkCommand,
+			HomeworkCommandToHomework homeworkCommandToHomework) {
+		this.homeworkRepository = homeworkRepository;
+		this.homeworkToHomeworkCommand = homeworkToHomeworkCommand;
+		this.homeworkCommandToHomework = homeworkCommandToHomework;
 	}
 
 	@Override
-	public Optional<Message> getById(Long id) {
-		return messageRepository.findById(id);
+	public Optional<Homework> getById(Long id) {
+		return homeworkRepository.findById(id);
 	}
 	
 	@Override
-	public List<Message> getMessages() {
-		return (List<Message>)messageRepository.findAll();
+	public List<Homework> getHomeworks() {
+		return (List<Homework>)homeworkRepository.findAll();
 	}
 
 	@Override
-	public MessageCommand saveMessage(MessageCommand messageCommand) {
-		Message message = messageCommandToMessage.convert(messageCommand);
-		Message savedMessage = messageRepository.save(message);
+	public HomeworkCommand saveHomework(HomeworkCommand homeworkCommand) {
+		Homework homework = homeworkCommandToHomework.convert(homeworkCommand);
+		Homework savedHomework = homeworkRepository.save(homework);
 		
-		return messageToMessageCommand.convert(savedMessage);
+		return homeworkToHomeworkCommand.convert(savedHomework);
 	}
 
 }

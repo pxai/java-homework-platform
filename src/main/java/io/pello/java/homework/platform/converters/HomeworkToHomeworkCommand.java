@@ -5,29 +5,26 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import io.pello.java.homework.platform.commands.MessageCommand;
-import io.pello.java.homework.platform.domain.Message;
+import io.pello.java.homework.platform.commands.HomeworkCommand;
+import io.pello.java.homework.platform.domain.Homework;
 
-/**
- * Created by jt on 6/21/17.
- */
 @Component
-public class HomeworkToHomeworkCommand implements Converter<Message, MessageCommand> {
+public class HomeworkToHomeworkCommand implements Converter<Homework, HomeworkCommand> {
 
     @Synchronized
     @Nullable
     @Override
-    public MessageCommand convert(Message message) {
-        if (message == null) {
+    public HomeworkCommand convert(Homework homework) {
+        if (homework == null) {
             return null;
         }
 
-        final MessageCommand messageCommand = new MessageCommand();
+        final HomeworkCommand homeworkCommand = new HomeworkCommand();
 
-        messageCommand.setId(message.getId());
-        messageCommand.setTitle(message.getTitle());
-        messageCommand.setContent(message.getContent());
+        homeworkCommand.setId(homework.getId());
+        homeworkCommand.setTitle(homework.getTitle());
+        homeworkCommand.setDescription(homework.getDescription());
 
-        return messageCommand;
+        return homeworkCommand;
     }
 }

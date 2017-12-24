@@ -6,14 +6,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import io.pello.java.homework.platform.commands.HomeworkCommand;
 import io.pello.java.homework.platform.commands.MessageCommand;
+import io.pello.java.homework.platform.services.HomeworkService;
 import io.pello.java.homework.platform.services.MessageService;
 
 @Controller
 public class MessageController {
-
 	private MessageService messageService;
-		
+	
     public MessageController(MessageService messageService) {
 		this.messageService = messageService;
 	}
@@ -31,4 +32,5 @@ public class MessageController {
     	model.addAttribute("message", savedMessageCommand);
         return "messageSaved";
     }
+	
 }

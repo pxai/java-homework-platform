@@ -3,11 +3,11 @@ package io.pello.java.homework.platform.services;
 import java.util.List;
 import java.util.Optional;
 
-import io.pello.java.homework.platform.commands.MessageCommand;
-import io.pello.java.homework.platform.domain.Message;
+import io.pello.java.homework.platform.commands.HomeworkCommand;
+import io.pello.java.homework.platform.domain.Homework;
 
 public interface HomeworkService {
-	public Optional<Message> getById(Long id);
-	public List<Message> getMessages();
-	public MessageCommand saveMessage(MessageCommand messageCommand);
+	public Optional<Homework> getById(Long id);
+	public List<Homework> getHomeworks();
+	public HomeworkCommand saveHomework(HomeworkCommand homeworkCommand);
 }
