@@ -23,14 +23,14 @@ public class MessageController {
     public String list (Model model) {    	
         model.addAttribute("messageCommand", new MessageCommand());
     	model.addAttribute("messages", messageService.getMessages());
-        return "messages";
+        return "messages/messages";
     }
 	
     @PostMapping("/messages")
     public String saveMessage(Model model, @ModelAttribute MessageCommand messageCommand) {
     	MessageCommand savedMessageCommand = messageService.saveMessage(messageCommand);
     	model.addAttribute("message", savedMessageCommand);
-        return "messageSaved";
+        return "messages/messageSaved";
     }
 	
 }

@@ -23,14 +23,14 @@ public class HomeworkController {
     public String list (Model model) {    	
         model.addAttribute("homeworkCommand", new HomeworkCommand());
     	model.addAttribute("homeworks", homeworkService.getHomeworks());
-        return "homeworks";
+        return "homeworks/homeworks";
     }
 	
     @PostMapping("/homeworks")
     public String saveHomework(Model model, @ModelAttribute HomeworkCommand homeworkCommand) {
     	HomeworkCommand savedHomeworkCommand = homeworkService.saveHomework(homeworkCommand);
     	model.addAttribute("homework", savedHomeworkCommand);
-        return "homeworkSaved";
+        return "homeworks/homeworkSaved";
     }
 	
 }

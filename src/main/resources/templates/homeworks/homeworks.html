@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Homework</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" 
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
+       integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
+       crossorigin="anonymous"
+	   th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}">
+</head>
+<body>
+  <div class="container">
+ 	<h1>Homework</h1>
+ 	<form action="#" th:action="@{/homeworks}" th:object="${homeworkCommand}" method="post">
+    	<div>
+    		<label for="title">Title</label>
+    	</div>
+    	<div>
+  			 <input type="text" th:field="*{title}" />
+    	</div>
+    	<div>
+    		<label for="description">Description</label>
+    	</div>
+    	<div>
+  			 <textarea th:field="*{description}" />
+    	</div>
+        <p><input type="submit" value="Submit" /></p>
+    </form>
+	<div th:each="homework : ${homeworks}">
+		<div class="card">
+	  	<div class="card-block">
+	  		<h4 class="card-title" th:text="${homework.title}">Default title</h4>
+			<h6 class="card-subtitle mb-2 text-muted" th:text="${homework.id}">0</h6>
+			<div class="card-text" th:text="${homework.description}">Default homework</div>
+		</div>
+		<div>
+	<div>
+	</div>
+</body>
+</html>
