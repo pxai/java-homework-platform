@@ -1,4 +1,4 @@
-package io.pello.java.homework.platform;
+package io.pello.java.homework.platform.converters;
 
 import lombok.Synchronized;
 import org.springframework.core.convert.converter.Converter;

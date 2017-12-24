@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
-public class MessageServiceImpl implements MessageService {
+public class HomeworkServiceImpl implements MessageService {
 
 	private MessageRepository messageRepository;
 	private MessageToMessageCommand messageToMessageCommand;
@@ -22,7 +22,7 @@ public class MessageServiceImpl implements MessageService {
 	
 	
 	
-	public MessageServiceImpl(MessageRepository messageRepository, 
+	public HomeworkServiceImpl(MessageRepository messageRepository, 
 			MessageToMessageCommand messageToMessageCommand,
 			MessageCommandToMessage messageCommandToMessage) {
 		this.messageRepository = messageRepository;
