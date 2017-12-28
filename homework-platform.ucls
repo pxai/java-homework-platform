@@ -5,7 +5,7 @@
   <class id="1" language="java" name="io.pello.java.homework.platform.domain.Message" project="java-homework-platform" 
     file="/java-homework-platform/src/main/java/io/pello/java/homework/platform/domain/Message.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="157" width="155" x="192" y="130"/>    
+    <position height="-1" width="-1" x="211" y="171"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -25,7 +25,7 @@
   <class id="3" language="java" name="io.pello.java.homework.platform.domain.User" project="java-homework-platform" 
     file="/java-homework-platform/src/main/java/io/pello/java/homework/platform/domain/User.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="129" width="97" x="387" y="130"/>    
+    <position height="-1" width="-1" x="460" y="396"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -35,19 +35,50 @@
   <class id="4" language="java" name="io.pello.java.homework.platform.domain.Role" project="java-homework-platform" 
     file="/java-homework-platform/src/main/java/io/pello/java/homework/platform/domain/Role.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="73" width="66" x="387" y="327"/>    
+    <position height="-1" width="-1" x="611" y="388"/>    
     <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
       sort-features="false" accessors="false" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="5">    
+  <class id="5" language="java" name="io.pello.java.homework.platform.domain.Assignment" 
+    project="java-homework-platform" 
+    file="/java-homework-platform/src/main/java/io/pello/java/homework/platform/domain/Assignment.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="234" y="391"/>    
+    <display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 
+      sort-features="false" accessors="false" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="6">    
     <end type="SOURCE" refId="3" navigable="false" variant="ASSOCIATION">      
-      <attribute id="6" name="roles"/>      
-      <multiplicity id="7" minimum="0" maximum="2147483647"/>    
+      <attribute id="7" name="assignment"/>      
+      <multiplicity id="8" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="9">    
+    <end type="SOURCE" refId="3" navigable="false" variant="ASSOCIATION">      
+      <attribute id="10" name="roles">        
+        <position height="0" width="0" x="191" y="25"/>      
+      </attribute>      
+      <multiplicity id="11" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="191" y="25"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="4" navigable="true" variant="ASSOCIATION"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="12">    
+    <end type="SOURCE" refId="5" navigable="false" variant="ASSOCIATION">      
+      <attribute id="13" name="user"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true" variant="ASSOCIATION"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="false" package="false" initial-value="false" signature="true" 

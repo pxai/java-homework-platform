@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import io.pello.java.homework.platform.commands.AssignmentCommand;
-import io.pello.java.homework.platform.commands.MessageCommand;
 import io.pello.java.homework.platform.services.AssignmentService;
-import io.pello.java.homework.platform.services.MessageService;
+
 
 @Controller
 public class AssignmentController {
