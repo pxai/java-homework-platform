@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Homeworks</title>
+    <title>Assignments</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet" 
        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
@@ -11,16 +11,16 @@
 </head>
 <body>
   <div class="container">
- 	<h1>Homeworks</h1>
- 	<p>Ok, your homework has been saved</p>
+ 	<h1>Assignments</h1>
+ 	<p>Ok, your assignment has been saved</p>
 	<div class="card">
   	<div class="card-block">
-	 <h4 class="card-title" th:text="${homework.title}">Default title</h4>
-	 <h6 class="card-subtitle mb-2 text-muted" th:text="${homework.id}">0</h6>
-	  <div class="card-text" th:text="${homework.description}">Default homework</div>
+	 <h4 class="card-title" th:text="${assignment.title}">Default title</h4>
+	 <h6 class="card-subtitle mb-2 text-muted" th:text="${assignment.id}">0</h6>
+	  <div class="card-text" th:text="${assignment.description}">Default assignment</div>
 	</div>
 	<div>
-	<a href=/homeworks/homeworks>Back</a>
+	<a href=/assignments/assignments>Back</a>
 	</div>
 </body>
 </html>

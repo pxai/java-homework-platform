@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Homework</title>
+    <title>Assignment</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" 
        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
@@ -11,8 +11,8 @@
 </head>
 <body>
   <div class="container">
- 	<h1>Homework</h1>
- 	<form action="#" th:action="@{/homeworks}" th:object="${homeworkCommand}" method="post">
+ 	<h1>Assignment</h1>
+ 	<form action="#" th:action="@{/assignments}" th:object="${assignmentCommand}" method="post">
     	<div>
     		<label for="title">Title</label>
     	</div>
@@ -27,12 +27,12 @@
     	</div>
         <p><input type="submit" value="Submit" /></p>
     </form>
-	<div th:each="homework : ${homeworks}">
+	<div th:each="assignment : ${assignments}">
 		<div class="card">
 	  	<div class="card-block">
-	  		<h4 class="card-title" th:text="${homework.title}">Default title</h4>
-			<h6 class="card-subtitle mb-2 text-muted" th:text="${homework.id}">0</h6>
-			<div class="card-text" th:text="${homework.description}">Default homework</div>
+	  		<h4 class="card-title" th:text="${assignment.title}">Default title</h4>
+			<h6 class="card-subtitle mb-2 text-muted" th:text="${assignment.id}">0</h6>
+			<div class="card-text" th:text="${assignment.description}">Default assignment</div>
 		</div>
 		<div>
 	<div>
