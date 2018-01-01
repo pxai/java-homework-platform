@@ -1,41 +1,66 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Assignment</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" 
-       src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" 
-       integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" 
-       crossorigin="anonymous"
-	   th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}">
+<title>Assignment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+	integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	crossorigin="anonymous"
+	th:href="@{/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css}">
 </head>
 <body>
-  <div class="container">
- 	<h1>Assignment</h1>
- 	<form action="#" th:action="@{/assignments}" th:object="${assignmentCommand}" method="post">
-    	<div>
-    		<label for="title">Title</label>
-    	</div>
-    	<div>
-  			 <input type="text" th:field="*{title}" />
-    	</div>
-    	<div>
-    		<label for="description">Description</label>
-    	</div>
-    	<div>
-  			 <textarea th:field="*{description}" />
-    	</div>
-        <p><input type="submit" value="Submit" /></p>
-    </form>
-	<div th:each="assignment : ${assignments}">
-		<div class="card">
-	  	<div class="card-block">
-	  		<h4 class="card-title" th:text="${assignment.title}">Default title</h4>
-			<h6 class="card-subtitle mb-2 text-muted" th:text="${assignment.id}">0</h6>
-			<div class="card-text" th:text="${assignment.description}">Default assignment</div>
-		</div>
-		<div>
-	<div>
-	</div>
+	<div class="container">
+		<h1>Assignment</h1>
+		<form action="#" th:action="@{/assignments}"
+			th:object="${assignmentCommand}" method="post">
+			<div>
+				<label for="name">Name</label>
+			</div>
+			<div>
+				<input type="text" th:field="*{name}" />
+			</div>
+			<div>
+				<label for="description">Description</label>
+			</div>
+			<div>
+				<textarea th:field="*{description}" />
+			</div>
+			<div>
+				<label for="start">Start date</label>
+			</div>
+			<div>
+				<input type="text" th:field="*{start}" />
+			</div>
+			<div>
+				<label for="due">Due date</label>
+			</div>
+			<div>
+				<input type="text" th:field="*{due}" />
+			</div>
+			<div>
+				<label for="name">Name</label>
+			</div>
+			<div>
+				<input type="text" th:field="*{name}" />
+			</div>
+			<p>
+				<input type="submit" value="Submit" />
+			</p>
+		</form>
+		<div th:each="assignment : ${assignments}">
+			<div class="card">
+				<div class="card-block">
+					<h4 class="card-title" th:text="${assignment.name}">Default
+						title</h4>
+					<h6 class="card-subtitle mb-2 text-muted"
+						th:text="${assignment.id}">0</h6>
+					<div class="card-text" th:text="${assignment.description}">Default
+						assignment</div>
+						<div th:text="${assignment.start}">Start date</div>
+						<div th:text="${assignment.due}">Due date</div>
+				</div>
+				<div>
+					<div></div>
 </body>
 </html>
