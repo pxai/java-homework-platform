@@ -12,3 +12,10 @@ insert into user_role (user_id , role_id ) values (1,2);
 insert into user_role (user_id , role_id ) values (1,3);
 insert into user_role (user_id , role_id ) values (2,2);
 insert into user_role (user_id , role_id ) values (3,2)
+
+insert into assignment (id, name, description,  start, due, user_id) values (1,'1st assignment','The first','2017-10-23','2018-01-02', 1);
+insert into assignment (id, name, description,  start, due, user_id) values (2,'2nd assignment','The second','2017-10-23','2018-01-02', 1);
+insert into assignment (id, name, description,  start, due, user_id) values (3,'1st assignment','The first','2017-10-23','2018-01-02', 2);
+insert into assignment (id, name, description,  start, due, user_id) values (4,'2nd assignment','The second','2017-10-23','2018-01-02', 2);
+
+
