@@ -57,10 +57,6 @@ public class MessageControllerTest {
 		String viewName = controller.list(model);
 
 		// then
-		assertEquals("messages/messages", viewName);
-		verify(messageService, times(1)).getMessages();
-		verify(model, times(1)).addAttribute(eq("messages"), argumentCaptor.capture());
-		
 		List<Message> listInController = argumentCaptor.getValue();
 		System.out.println(listInController);
 		assertEquals(3, listInController.size());
