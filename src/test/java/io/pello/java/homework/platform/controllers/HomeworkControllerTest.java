@@ -33,9 +33,9 @@ public class HomeworkControllerTest {
 
         String viewName = controller.list(model);
 
-        assertEquals("index", viewName);
+        assertEquals("homeworks/homeworks", viewName);
         verify(homeworkService, times(1)).getHomeworks();
-        verify(model, times(1)).addAttribute(eq("homeworks"), anySet());
+        verify(model, times(1)).addAttribute(eq("homeworks"), anyList());
     }
 
 }

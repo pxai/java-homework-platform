@@ -25,34 +25,29 @@ public class MessageControllerTest {
 	Model model;
 
 	MessageController controller;
+	List<Message> messages;
 
 	@Before
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
-
+		messages = new ArrayList<Message>();
 		controller = new MessageController(messageService);
 	}
 
 	@Test
-	public void getIndexPage() throws Exception {
+	public void listShouldCallGetMessages() throws Exception {
 
 		String viewName = controller.list(model);
 
 		assertEquals("messages/messages", viewName);
 		verify(messageService, times(1)).getMessages();
-		verify(model, times(1)).addAttribute(eq("messageCommand"), anySet());
+		verify(model, times(1)).addAttribute(eq("messages"), anyList());
 	}
 
 	@Test
-	public void getIndexPage2() throws Exception {
+	public void listShouldReturnListOfMessages () throws Exception {
 		// given
-		List<Message> messages = new ArrayList<Message>();
-		messages.add(new Message());
-
-		Message message = new Message();
-		message.setId(1L);
-
-		messages.add(message);
+		initList();
 
 		when(messageService.getMessages()).thenReturn(messages);
 
@@ -64,8 +59,16 @@ public class MessageControllerTest {
 		// then
 		assertEquals("messages/messages", viewName);
 		verify(messageService, times(1)).getMessages();
-		verify(model, times(1)).addAttribute(eq("messageCommand"), argumentCaptor.capture());
+		verify(model, times(1)).addAttribute(eq("messages"), argumentCaptor.capture());
+		
 		List<Message> listInController = argumentCaptor.getValue();
-		assertEquals(2, listInController.size());
+		System.out.println(listInController);
+		assertEquals(3, listInController.size());
+	}
+
+	private void initList() {
+		messages.add(new Message());
+		messages.add(new Message());
+		messages.add(new Message());
 	}
 }

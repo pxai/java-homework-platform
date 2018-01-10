@@ -34,9 +34,9 @@ public class AssignmentControllerTest {
 
         String viewName = controller.list(model);
 
-        assertEquals("index", viewName);
+        assertEquals("assignments/assignments", viewName);
         verify(assignmentService, times(1)).getAssignments();
-        verify(model, times(1)).addAttribute(eq("assignments"), anySet());
+        verify(model, times(1)).addAttribute(eq("assignments"), anyList());
     }
 
 }
