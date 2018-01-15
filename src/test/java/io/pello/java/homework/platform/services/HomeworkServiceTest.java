@@ -10,7 +10,9 @@ import org.mockito.MockitoAnnotations;
 import io.pello.java.homework.platform.domain.Homework;
 import io.pello.java.homework.platform.repositories.HomeworkRepository;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
@@ -29,21 +31,20 @@ public class HomeworkServiceTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        homeworkService = new HomeworkServiceImpl(homeworkRepository);
+        homeworkService = new HomeworkServiceImpl(homeworkRepository, null, null);
     }
 
     @Test
     public void getHomeworks() throws Exception {
+        List<Homework> homeworkData = new ArrayList<Homework>();
+        homeworkData.add(new Homework());
+        homeworkData.add(new Homework());
+        
+        when(homeworkService.getHomeworks()).thenReturn(homeworkData);
 
-        Homework homework = new Homework();
-        HashSet receipesData = new HashSet();
-        receipesData.add(homework);
+        List<Homework> homeworks = homeworkService.getHomeworks();
 
-        when(homeworkService.getHomeworks()).thenReturn(receipesData);
-
-        Set<Homework> homeworks = homeworkService.getHomeworks();
-
-        assertEquals(homeworks.size(), 1);
+        assertEquals(homeworks.size(), 2);
         verify(homeworkRepository, times(1)).findAll();
     }
 
