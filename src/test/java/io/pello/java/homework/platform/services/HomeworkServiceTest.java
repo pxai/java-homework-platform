@@ -1,37 +1,39 @@
 package io.pello.java.homework.platform.services;
 
-
-
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import io.pello.java.homework.platform.domain.Homework;
-import io.pello.java.homework.platform.repositories.HomeworkRepository;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
+import io.pello.java.homework.platform.converters.HomeworkCommandToHomework;
+import io.pello.java.homework.platform.converters.HomeworkToHomeworkCommand;
+import io.pello.java.homework.platform.domain.Homework;
+import io.pello.java.homework.platform.repositories.HomeworkRepository;
+
 
 public class HomeworkServiceTest {
 
-    HomeworkServiceImpl homeworkService;
-
+    private HomeworkServiceImpl homeworkService;
+    @Autowired
+    private HomeworkToHomeworkCommand homeworkToHomeworkCommand;
+    @Autowired
+    private HomeworkCommandToHomework homeworkCommandToHomework;
+    
     @Mock
-    HomeworkRepository homeworkRepository;
+    private HomeworkRepository homeworkRepository;
 
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        homeworkService = new HomeworkServiceImpl(homeworkRepository, null, null);
+        homeworkService = new HomeworkServiceImpl(homeworkRepository, homeworkToHomeworkCommand, homeworkCommandToHomework);
     }
 
     @Test
