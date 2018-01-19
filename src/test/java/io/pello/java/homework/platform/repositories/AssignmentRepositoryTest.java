@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import io.pello.java.homework.platform.domain.Message;
+import io.pello.java.homework.platform.domain.Assignment;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,25 +17,25 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class MessageRepositoryTest {
+public class AssignmentRepositoryTest {
 
     @Autowired
-    MessageRepository messageRepository;
+    AssignmentRepository assignmentRepository;
 
     @Before
     public void setUp() throws Exception {
     }
 
     @Test
-    public void shouldFindByTitle() throws Exception {
-        List<Message> messageList = messageRepository.findByTitle("test");
-        assertEquals(1, messageList.size());
+    public void shouldFindById() throws Exception {
+        Optional<Assignment> assignment = assignmentRepository.findById(1L);
+        assertEquals(1, assignment.get().getId().intValue());
     }
 
     @Test
-    public void shoudlFindByContent() throws Exception {
-        List<Message> messageList = messageRepository.findByContent("test");
-        assertEquals(1, messageList.size());
+    public void shoudlFindByName() throws Exception {
+        List<Assignment> assignmentList = assignmentRepository.findByName("test");
+        assertEquals(1, assignmentList.size());
     }
 
 }
