@@ -36,6 +36,7 @@ public class HomeworkServiceTest {
         homeworkService = new HomeworkServiceImpl(homeworkRepository, homeworkToHomeworkCommand, homeworkCommandToHomework);
     }
 
+    
     @Test
     public void getHomeworks() throws Exception {
         List<Homework> homeworkData = new ArrayList<Homework>();
